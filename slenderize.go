@@ -1,5 +1,6 @@
 package gomaith
 
+// Slenderize changes the last vowel in s to be a slender vowel.
 func Slenderize(s string) string {
 	ss := []rune(s)
 	ss = slenderizeSlice(ss)
