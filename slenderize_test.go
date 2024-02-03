@@ -1,10 +1,17 @@
 package gomaith_test
 
 import (
+	"fmt"
+	"testing"
+
 	"github.com/johnstcn/gomaith"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
+
+func ExampleSlenderize() {
+	fmt.Println(gomaith.Slenderize("bonn"))
+	// output: boinn
+}
 
 func TestSlenderize(t *testing.T) {
 	t.Parallel()
