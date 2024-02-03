@@ -48,20 +48,7 @@ func Vocative(s string) string {
 	// Exception: this is only done for proper nouns, and not common nouns.
 	// Named entity recognition is a hard problem, so for the purposes of this
 	// exercise we will assume that all capitalized strings are proper nouns.
-	if _, found := irishConsonants[ss[len(ss)-1]]; found {
-		lastVowelIndex := lastIndex(ss, func(r rune) bool {
-			_, found := irishVowels[r]
-			return found
-		})
-		// Only add if the last broad vowel is not at the beginning or at the end of the word.
-		if lastVowelIndex != -1 && lastVowelIndex != 0 && lastVowelIndex != len(ss)-1 {
-			switch ss[lastVowelIndex] {
-			case 'a', 'á', 'o', 'ó', 'u', 'ú':
-				ss = append(ss[:lastVowelIndex+1], append([]rune{'i'}, ss[lastVowelIndex+1:]...)...)
-			default: // do nothing if it is not a broad vowel
-			}
-		}
-	}
+	ss = slenderizeSlice(ss)
 
 	// Capitalize the first letter of the string after we lower-cased it.
 	ss[0] = unicode.ToUpper(ss[0])
