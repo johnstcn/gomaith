@@ -1,10 +1,17 @@
 package gomaith_test
 
 import (
+	"fmt"
+	"testing"
+
 	"github.com/johnstcn/gomaith"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
+
+func ExampleLenite() {
+	fmt.Println(gomaith.Lenite("ceann"))
+	// output: cheann
+}
 
 func TestLenite(t *testing.T) {
 	t.Parallel()
