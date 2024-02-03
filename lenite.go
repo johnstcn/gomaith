@@ -1,5 +1,7 @@
 package gomaith
 
+var lenitable = M('b', 'c', 'd', 'f', 'g', 'm', 'p', 's', 't')
+
 // Lenite adds a séimhiú to the beginning of s if it begins with a lenitable
 // consonant and does not already have a séimhiú after the initial consonant.
 func Lenite(s string) string {

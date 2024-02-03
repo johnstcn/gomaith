@@ -8,7 +8,6 @@ import (
 var irishLetters = M('a', 'á', 'b', 'c', 'd', 'e', 'é', 'f', 'g', 'h', 'i', 'í', 'l', 'm', 'n', 'o', 'ó', 'p', 'r', 's', 't', 'u', 'ú')
 var irishVowels = M('a', 'á', 'e', 'é', 'i', 'í', 'o', 'ó', 'u', 'ú')
 var irishConsonants = difference(irishVowels, irishLetters)
-var lenitable = M('b', 'c', 'd', 'f', 'g', 'm', 'p', 's', 't')
 
 // Vocative takes a string and returns the vocative form of it.
 // The vocative form is used when addressing someone directly.
