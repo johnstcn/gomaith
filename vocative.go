@@ -42,11 +42,7 @@ func Vocative(s string) string {
 
 	// 2. Names that start with a consonant get a séimhiú 'h' appended to the first rune.
 	// Lenitable consonants in Irish are b, c, d, f, g, m, p, s, and t.
-	if _, found := lenitable[ss[0]]; found {
-		if len(ss) > 1 && ss[1] != 'h' {
-			ss = append([]rune{ss[0], 'h'}, ss[1:]...)
-		}
-	}
+	ss = leniteSlice(ss)
 
 	// 3. If the name ends in a broad consonant, slenderise it by adding
 	// an 'i' just before it. A broad consonant is one that comes after a, o, or u.
