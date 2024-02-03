@@ -31,11 +31,7 @@ func Vocative(s string) string {
 	// characters not found in the Irish alphabet is not an Irish name.
 	for _, r := range ss {
 		if _, found := irishLetters[r]; !found {
-			// Capitalize the first letter of the string after we lower-cased it.
-			ss[0] = unicode.ToUpper(ss[0])
-			// Finally, add the vocative particle "a " to the beginning of the string.
-			ss = append([]rune("a "), ss...)
-			return string(ss)
+			return "a " + s
 		}
 	}
 
